@@ -32,6 +32,13 @@
                 });
             });
         </script>
+        <script>
+                function setToForm(Latitude,Longitude)
+                {
+                       $('input[name="latitude"]').val(latitude);
+                       $('input[name="longitude"]').val(longitude);
 
+                }
+        </script>
     </body>
 </html>
