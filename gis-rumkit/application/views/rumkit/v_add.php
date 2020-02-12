@@ -38,13 +38,13 @@
 
                                      <div class="form-group">
                                                     <label>Latitude</label>
-                                                    <input class="form-control" name="latitude" placeholder="latitude" required>
+                                                    <input class="form-control" name="latitude" placeholder="latitude" required readonly>
                                                    
                                      </div>
 
                                      <div class="form-group">
                                                     <label>Longitude</label>
-                                                    <input class="form-control" name="longitude" placeholder="Longitude" required>
+                                                    <input class="form-control" name="longitude" placeholder="Longitude" required readonly>
                                                    
                                      </div>
 
