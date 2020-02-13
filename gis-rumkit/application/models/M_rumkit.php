@@ -13,6 +13,13 @@ class M_rumkit extends CI_Model {
         
     }
 
+    public function input($data)
+    {
+        $this->db->insert('tbl_rumkit',$data);
+
+    }
+
+
 }
 
 /* End of file Mod_rumkithp */

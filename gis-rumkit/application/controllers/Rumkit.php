@@ -40,14 +40,38 @@ public function input()
         $marker['ondragend']='setToForm(event.latLng.lat(),event.latLng.lng())';
         $this->googlemaps->add_marker($marker);
 
-        $data=array(
+        $this->form_validation->set_rules('nama_rumkit', 'Nama Rumah Sakit', 'required');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required');
+        $this->form_validation->set_rules('no_telpon', 'no_telpon', 'required');
+        $this->form_validation->set_rules('latitude', 'latitude', 'required');
+        $this->form_validation->set_rules('longitude', 'longitude', 'required');
+        $this->form_validation->set_rules('deskripsi', 'deskripsi', 'required');
+
+        
+        if ($this->form_validation->run() == FALSE) {
+            # code...
+            $data=array(
             'title' => 'Input Data Rumah Sakit',
             'map'=> $this->googlemaps->create_map(),
             'isi'   => 'rumkit/v_add'
         );
         $this->load->view('template/v_wrapper',$data,FALSE);
-    }
+        } else {
+            # code...
+            $data=array(
+                'nama_rumkit'=> $this->input->post('nama_rumkit'),
+                'alamat'=> $this->input->post('alamat'),
+                'no_telpon'=> $this->input->post('no_telpon'),
+                'latitude'=> $this->input->post('latitude'),
+                'longitude'=> $this->input->post('longitude'),
+                'deskripsi'=> $this->input->post('deskripsi'),
+            );
+            $this->m_rumkit->input($data);
+            $this->session->set_flashdata('pesan', 'Data Berhasil Disimpan');
+            redirect('rumkit');
 
+        }        
+    }
 }
 
 /* End of file Rumkit.php */

@@ -50,7 +50,7 @@
 
                                      <div class="form-group">
                                                     <label>Deskripsi</label>
-                                                    <textarea class="form-control" name="deskrpsi" rows="3"></textarea>
+                                                    <textarea class="form-control" name="deskripsi" rows="3"></textarea>
                                                 </div>
 </div>
                                     <div class="form-group">
